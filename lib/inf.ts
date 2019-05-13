@@ -42,3 +42,26 @@ console.log(P);
 // 只读数组
 let list: number[] = [1, 2, 3, 4, 5];
 let Arr: ReadonlyArray<number> = list;
+
+interface myFunc {
+  (type: boolean, count: number): any;
+}
+
+let myFunction: myFunc;
+myFunction = function(type, count) {
+  if (type) {
+    return Boolean(count);
+  }
+  return false;
+};
+
+console.log(myFunction(true, 1), myFunction(false, 1));
+
+interface stringArray {
+  [index: number]: string;
+}
+let myList: stringArray;
+myList = ["hello", "ts", "js"];
+
+let myItem: string = myList[1];
+console.log(myItem);
