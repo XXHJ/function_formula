@@ -58,7 +58,7 @@ myFunction = function(type, count) {
 console.log(myFunction(true, 1), myFunction(false, 1));
 
 interface stringArray {
-  [index: number]: string;
+  readonly [index: number]: string;
 }
 let myList: stringArray;
 myList = ["hello", "ts", "js"];
