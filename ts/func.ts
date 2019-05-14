@@ -19,7 +19,7 @@ let HandAdd: (x: string, y: string, z: number) => any = function(
   z: number
 ) {};
 
-function hand(x: string, y?: number, z: number = 10) {
+function hand(x: string, y?: number, z: number = 10): void | string {
   if (y) {
     console.log(`${x} --- is ---${y} --- is --- ${z}`);
   }
@@ -29,3 +29,12 @@ function hand(x: string, y?: number, z: number = 10) {
 console.log(hand("hello"));
 hand("world", 20);
 hand("ledng", 30, 50);
+
+// 剩余参数
+
+function res(firts: string, ...last: string[]): string {
+  return `${firts}--${last.join("|")}`;
+}
+
+let HandRes: (x: string, ...y: string[]) => string = res;
+console.log(HandRes("hello", "world", "ni", "hao", "yes"));

@@ -18,3 +18,13 @@ function hand(x, y, z) {
 console.log(hand("hello"));
 hand("world", 20);
 hand("ledng", 30, 50);
+// 剩余参数
+function res(firts) {
+    var last = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        last[_i - 1] = arguments[_i];
+    }
+    return firts + "--" + last.join("|");
+}
+var HandRes = res;
+console.log(HandRes("hello", "world", "ni", "hao", "yes"));
