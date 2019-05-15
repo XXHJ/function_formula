@@ -28,3 +28,30 @@ enum E1 {
   D
 }
 console.log(E1.D);
+
+enum S {
+  T,X, Y, Z
+}
+function f(obj: { X: number }) {
+  return obj.X;
+}
+
+// Works, since 'E' has a property named 'X' which is a number.
+console.log(f(S));
+
+// 反方映射 可以通过默认值来进行反向映射(只能为索引，不能为具体的值)
+
+enum SE {
+  A,
+  B = "c"
+}
+let a = SE.A // 0
+let b = SE.B
+console.log(SE[a], SE[b]);
+
+const enum SS {
+  a = 1,
+  b,
+  c = 2
+}
+console.log(SS.b) // 2
