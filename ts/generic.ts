@@ -53,3 +53,65 @@ interface TODO<T> {
 let Todo: TODO<object> = Foo;
 
 console.log(Todo(["he", 2, true, false], 5));
+
+// 泛型类
+class TestTodo<T> {
+  zeroValue: T;
+  add: (x: T, y: T) => T;
+}
+let test = new TestTodo<number>();
+test.zeroValue = 5;
+test.add = (x, y) => x + y;
+console.log(test.add(3, 2));
+
+let test1 = new TestTodo<string>();
+test1.zeroValue = "hello";
+test1.add = (x, y) => x + y;
+console.log(test1.add(test1.zeroValue, "world"));
+
+// 泛型约束
+interface Lengthwise {
+  length: number;
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(arg.length);
+  return arg;
+}
+// 在参数中必需要带有length属性，不管是对象的length和数组的隐式length
+loggingIdentity({ length: 5, he: "sss" });
+loggingIdentity(["hello"]);
+
+// 在泛型约束中使用类型参数
+function SSML<T>(obj: T, key: string | number) {
+  return obj[key];
+}
+let x = { a: "a", b: "b", c: "c" };
+console.log(SSML(x, "a"));
+
+class BeeKeeper {
+  hasMask: boolean;
+}
+
+class ZooKeeper {
+  nametag: string;
+}
+
+class Animal {
+  numLegs: number;
+}
+
+class Bee extends Animal {
+  keeper: BeeKeeper;
+}
+
+class Lion extends Animal {
+  keeper: ZooKeeper;
+}
+
+function createInstance<A extends Animal>(c: new () => A): A {
+  return new c();
+}
+
+createInstance(Lion).keeper.nametag; // typechecks!
+createInstance(Bee).keeper.hasMask; // typechecks!
