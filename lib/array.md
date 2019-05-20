@@ -29,7 +29,7 @@ hello -- 1
 world -- 2
 ```
 
-### TODO: 实现 Array 的 forEach 方法，主要是遍历出数组中的每一项元素。传入的参数为数组对象和回调方法
+#### TODO: 实现 Array 的 forEach 方法，主要是遍历出数组中的每一项元素。传入的参数为数组对象和回调方法
 
 ## [map](./array.js) 实现
 
@@ -85,7 +85,7 @@ let mapList = map([2, '3', 'hello'], (item, index) => {
 ]
 ```
 
-### TOTO:
+#### TOTO:
 
 ## [filter](./array.js) 实现
 
@@ -116,7 +116,7 @@ const filterList = filter([1, 2, 3, 4, { name: 'hello' }], (itme, index) => {
 [name: 'hello']
 ```
 
-### TOTO:
+#### TOTO:
 
 ## [concat](./array.js) 实现
 
@@ -165,4 +165,4 @@ let rerult = concat(map(concatList, (item) => {
 [ 1, 2, 3, 3, 2, 3, 3, 2, 3, 4, 2, 3 ]
 ```
 
-### TOTO:
+#### TOTO:
