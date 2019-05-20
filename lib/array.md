@@ -68,7 +68,21 @@ let mapList = map([2, '3', 'hello'], (item, index) => {
 ### 返回值
 
 ```
-
+[
+    {
+        name: 'jj',
+        item:2,
+        index: 0
+    },
+    {
+        item: 3,
+        index: 1
+    },
+    {
+        item: 'hello',
+        index: 4
+    }
+]
 ```
 
 ### TOTO:
@@ -99,12 +113,12 @@ const filterList = filter([1, 2, 3, 4, { name: 'hello' }], (itme, index) => {
 ### 返回值
 
 ```
-
+[name: 'hello']
 ```
 
 ### TOTO:
 
-## [concat](./array) 实现
+## [concat](./array.js) 实现
 
 ### 示例定义
 
@@ -148,7 +162,7 @@ let rerult = concat(map(concatList, (item) => {
 ### 返回值
 
 ```
-
+[ 1, 2, 3, 3, 2, 3, 3, 2, 3, 4, 2, 3 ]
 ```
 
 ### TOTO:
